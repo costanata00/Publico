@@ -1,4 +1,6 @@
 export function substring(str, ini, fin) {
+if (typeof str !== 'string') throw new Error('Apenas strings são aceitas')
+    
     var nova = ''
     for (var i = ini; i < fin; i++) {
         nova += str[i]
@@ -8,6 +10,8 @@ export function substring(str, ini, fin) {
 
 
 export function leftTrim(str) {
+    if (typeof str !== 'string') throw new Error('Apenas strings são aceitas')
+
     var nova = ''
     var conta = 0
     for (var i = 0; i < str.length; i++) {
@@ -22,6 +26,8 @@ export function leftTrim(str) {
     return nova
 }
 export function rightTrim(str) {
+    if (typeof str !== 'string') throw new Error('Apenas strings são aceitas')
+
     var nova = ''
     var conta = 0
     for (var i = str.length - 1; i >= 0; i--) {
@@ -37,6 +43,8 @@ export function rightTrim(str) {
 }
 
 export function trim(str) {
+    if (typeof str !== 'string') throw new Error('Apenas strings são aceitas')
+
     var inicio = 0
     var final = str.length
     for (var i = 0; i < str.length; i++) {
@@ -97,7 +105,7 @@ export function group(input, partes, retorno) {
             if (partes == retorno) {
                 return input - (tamanho*(partes-1))
             } */
-
+    if (typeof input !== 'string') throw new Error('Apenas strings são aceitas')
     var tamanho = Math.floor(input.length / partes)
     if (retorno > partes || retorno < 1) {
         return ''
